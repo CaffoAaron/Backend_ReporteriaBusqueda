@@ -1,5 +1,6 @@
 package com.example.reporteriabusqueda.controller;
 
+import com.example.reporteriabusqueda.MesaDePartes;
 import com.example.reporteriabusqueda.Reporte;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -72,6 +73,12 @@ public class ReporteController {
         });
 
         return reportes;
+    }
+
+    @PostMapping("/mesaDePartes")
+    public MesaDePartes saveMesaDePartes(@RequestBody MesaDePartes mesaDePartes){
+        System.out.println(mesaDePartes);
+        return mesaDePartes;
     }
 //    public Page<UserChefResource> getAllUserChef(Pageable pageable) {
 //        Page<UserChef> userChef = userChefService.getAllUserChef(pageable);
